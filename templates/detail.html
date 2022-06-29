@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+
+{% block content %}
+    <img src="{{data.photo.url}}">
+    <h1>{{data.firstname}} {{data.lastname}}</h1>
+    <p>{{data.phone}}</p>
+    <p>{{data.email}}</p>
+    <p>{{data.gender}}</p>
+    <p>{{data.is_addmited}}</p>
+{% endblock content %}  

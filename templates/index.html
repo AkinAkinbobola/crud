@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Index Page</h1>
+    <a href="add">Add new student</a>
+    
+    <table border=1>
+        <tr>
+            <td>Photo</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+        </tr>
+        {% for content in data %}
+        <tr>
+            
+            <td><img src="{{content.photo.url}}" alt=""> </td>
+            <td>{{content.first_name}} </td>
+            
+            
+            <td>{{content.last_name}}</td>
+            <td>{{content.email}}</td>
+            <td>{{content.phone}}</td>
+            <td>{{content.is_addmited}}</td>
+
+            <td>
+                <a href="{% url 'edit' content.id%}">Edit</a>
+                <a href="{% url 'delete' content.id %}">Delete</a>
+                <a href="{% url 'detail' content.id %}">View</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+
+    {% comment %} <img src="{% static './images/react-icon.png' %}"> {% endcomment %}
+{% endblock content %}
+
